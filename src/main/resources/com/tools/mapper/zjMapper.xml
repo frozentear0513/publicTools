@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tools.publictools.zjgl.dao.ZjDao">
+
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.tools.publictools.zjgl.pojo.Zj" id="zjMap">
+        <id column="C_BH" property="cBh" jdbcType="CHAR" />
+        <result column="C_ZJMC" property="cZjmc" jdbcType="VARCHAR" />
+        <result column="C_BZ" property="cBz" jdbcType="VARCHAR" />
+        <result column="DT_CJSJ" property="dtCjsj" jdbcType="DATE" />
+        <result column="DT_ZHGXSJ" property="dtZhxgsj" jdbcType="DATE" />
+    </resultMap>
+
+    <select id="getAllZj" resultMap="zjMap">
+        select * from db_tools.t_zj
+    </select>
+</mapper>

@@ -6,21 +6,23 @@
  */
 package com.tools.publictools.version;
 
+import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
  * VersionController
- * @description TODO
+ * @description 应用版本类
  * @author wangwu
  * @date 2021年05月21日 19:49
- * @version 2.9.4
+ * @version 1.0.0
  */
 @Controller
 public class VersionController {
-
-    @RequestMapping("/version")
+   @RequestMapping(value = "/version", method = RequestMethod.GET)
+   @ApiOperation(value = "查询当前版本信息", notes = "查询当前应用的版本信息")
    public String getVersion() {
        return "version.html";
    }
